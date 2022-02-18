@@ -11,3 +11,11 @@ Version 1.0.1
 +===============================+
 # Minor changes
 # Assigned default block regions.
+
+
++===============================+
+Version 1.0.2
+18 Feb, 2022
++===============================+
+# Removed header and footer clip shape for mobile devices.
+# Minor changes
