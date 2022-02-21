@@ -1,12 +1,13 @@
 /* Variables
 ---------------------------------------- */
 :root {
-  --body-bg: #ffffff;
-  --color-heading: #111111;
-  --light: #F4FCFA;
-  --border: #D2EFE8;
   --primary: #97C2B8;
   --secondary: #F9AB51;
+  --dark: #628B82;
+  --light: #F4FCFA;
+  --border: #D2EFE8;
+
+  --color-heading: #111111;
 
   --font-text: 'Roboto', sans-serif;
   --font-heading: 'Roboto', sans-serif;
@@ -18,10 +19,32 @@
 /* HTML and Body
 ---------------------------------------- */
 body {
+  background-color: #ffffff;
   font-family: var(--font-text);
-  font-weight: 400;
 }
 
+/* Typography
+---------------------------------------- */
+code, kbd, pre, samp {
+  background: var(--border);
+  color: var(--color-heading);
+}
+blockquote {
+  box-shadow: var(--shadow);
+}
+/* Table
+---------------------------------------- */
+th {
+  background: var(--light);
+  color: var(--color-heading);
+  border: 1px solid var(--border);
+}
+th a {
+  color: var(--color-heading);
+}
+td {
+  border: 1px solid var(--border);
+}
 /* Form
 ---------------------------------------- */
 input[type="text"],
@@ -43,14 +66,17 @@ input[type="search"]:focus,
 textarea:focus {
   box-shadow: 0 0 4px 1px var(--primary);
 }
+fieldset {
+  border: 1px solid var(--border);
+}
 /* Button */
-.button {
+.button, button, [type="button"], [type="reset"], [type="submit"] {
   background-color: var(--light);
   border: 2px solid var(--primary);
   border-radius: 6px;
   transition: all 0.3s ease;
 }
-.button:hover {
+.button:hover, button:hover, [type="button"]:hover, [type="reset"]:hover, [type="submit"]:hover {
   background-color: var(--border);
   color: var(--color-heading);
 }
