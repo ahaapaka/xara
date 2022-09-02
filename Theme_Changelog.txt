@@ -26,3 +26,17 @@ Version 1.0.3
 21 Feb, 2022
 +===============================+
 # Minor improvements
+
+
++===============================+
+Version 1.1.0
+02 sep, 2022
++===============================+
+# Removed header main customization options from theme settings.
+# Removed page header padding customization options from theme settings.
+# Removed sidebar block customization options from theme settings.
+# Removed headings and pragraph customization options from theme settings.
+# Removed logo customization options from theme settings.
+# Removed breadcrumb customization options from theme settings.
+# Removed button customization options from theme settings.
+# Removed scroll to top customization options from theme settings.

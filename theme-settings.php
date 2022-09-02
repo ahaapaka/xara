@@ -92,7 +92,7 @@ function xara_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['upgrade'] = [
     '#type'  => 'details',
     '#title' => t('Upgrade To XaraPro'),
-    '#description'  => t('<h3>Upgrade To XaraPro For $29 Only</h3><ul><li>One time payment.</li><li>No re-curring payment</li><li>No renewal fee.</li><li>Free life time updates.</li><li>One year support</li></ul>'),
+    '#description'  => t('<h3>Upgrade To XaraPro For $29 Only</h3><ul><li>One time payment.</li><li>No re-curring payment</li><li>No renewal fee.</li><li>One year updates.</li><li>One year support</li></ul>'),
     '#group' => 'xara',
   ];
 
@@ -215,11 +215,8 @@ function xara_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['header']['header_links'] = [
     '#type'        => 'details',
     '#title'       => t('Header Links'),
-    '#group' => 'header_tab',
-  ];
-  $form['header']['header_links']['header_links_section'] = [
-    '#type'        => 'fieldset',
     '#description'   => t('<a href="https://www.drupar.com/doc/xara/how-manage-website-logo" target="_blank">Change Logo</a> || <a href="https://www.drupar.com/doc/xara/how-change-favicon-icon" target="_blank">Change Favicon Icon</a> || <a href="https://www.drupar.com/doc/xara/header-main-menu" target="_blank">Manage Main Menu</a> || <a href="https://www.drupar.com/doc/xara/sliding-search-form" target="_blank">Sliding Search Form</a>'),
+    '#group' => 'header_tab',
   ];
   // Header -> Sticky header.
   $form['header']['sticky_header'] = [
@@ -228,114 +225,11 @@ function xara_form_system_theme_settings_alter(&$form, &$form_state) {
     '#description'   => t('This feature is available in the premium version of this theme. <a href="https://www.drupar.com/theme/xarapro" target="_blank">Buy XaraPro for $29 only.</a>'),
     '#group' => 'header_tab',
   ];
-  // Header -> Header Presets
-  $form['header']['header_presets'] = [
-    '#type'        => 'details',
-    '#title'       => t('Header Presets / Styles'),
-    '#description'   => t('coming soon..'),
-    '#group' => 'header_tab',
-  ];
-  $form['header']['header_presets']['header_style'] = [
-    '#type'        => 'radios',
-    '#title'       => t('Select A Style'),
-    '#options' => array(
-    	'header_style_one' => t('Classic'),
-      'header_style_two' => t('Inverted'),
-      'header_style_three' => t('Centerted'),
-      'header_style_four' => t('Spaced'),
-    ),
-    '#disabled'   => TRUE,
-  ];
-  // header -> Header main
-  $form['header']['header_main'] = [
-    '#type'  => 'details',
-    '#title' => t('Header Main'),
-    '#group' => 'header_tab',
-  ];
-  $form['header']['header_main']['header_main_default_section'] = [
-    '#type'        => 'fieldset',
-    '#title'       => t('Use Default Header Padding'),
-    '#attributes' => array('class' => array('set-default-fieldset')),
-  ];
-  $form['header']['header_main']['header_main_default_section']['header_main_default'] = [
-    '#type'          => 'checkbox',
-    '#title'         => t('Use theme default header padding'),
-    '#default_value' => theme_get_setting('header_main_default'),
-    '#description'   => t('Check this option to use theme default value of header padding. Uncheck this to set custom value below.'),
-  ];
-  $form['header']['header_main']['header_main_info_section'] = [
-    '#type'        => 'fieldset',
-    '#title'       => t('Header Main Region'),
-    '#description'   => t('This region contains logo and main menu.'),
-    '#attributes' => array('class' => array('info-fieldset')),
-  ];
-  $form['header']['header_main']['header_main_section'] = [
-    '#type'        => 'fieldset',
-    '#title'       => t('Header Padding'),
-    '#description'   => t('<hr /><br />This header region contains <strong>logo</strong> and <strong>main menu</strong>.')
-  ];
-  $form['header']['header_main']['header_main_section']['header_main_padding_top'] = [
-    '#type'   => 'number',
-    '#min'  => 0,
-    '#max'  => 10,
-    '#step' => 0.1,
-    '#title'  => t('Padding Top (rem)'),
-    '#default_value' => theme_get_setting('header_main_padding_top'),
-    '#description'   => t("Default padding top is <strong>1rem</strong> which is equivalent to 16px.<br /><br /><p><hr /></p><br />"),
-  ];
-  $form['header']['header_main']['header_main_section']['header_main_padding_bottom'] = [
-    '#type'   => 'number',
-    '#min'  => 0,
-    '#max'  => 10,
-    '#step' => 0.1,
-    '#title'  => t('Padding Bottom (rem)'),
-    '#default_value' => theme_get_setting('header_main_padding_bottom'),
-    '#description'   => t("Default padding bottom is <strong>1rem</strong> which is equivalent to 16px."),
-  ];
   // header-> page header
   $form['header']['header_page'] = [
     '#type'  => 'details',
     '#title' => t('Page Header'),
     '#group' => 'header_tab',
-  ];
-  $form['header']['header_page']['header_page_default_section'] = [
-    '#type'        => 'fieldset',
-    '#title'       => t('Use Default Settings'),
-    '#attributes' => array('class' => array('set-default-fieldset')),
-  ];
-  $form['header']['header_page']['header_page_default_section']['header_page_default'] = [
-    '#type'          => 'checkbox',
-    '#title'         => t('Use theme default page header settings'),
-    '#default_value' => theme_get_setting('header_page_default'),
-    '#description'   => t('Check this option to use theme default value of sidebar width. Uncheck this to set custom value below.'),
-  ];
-  $form['header']['header_page']['header_page_info_section'] = [
-    '#type'        => 'fieldset',
-    '#title'       => t('Page Header Region'),
-    '#description'   => t('This region contains page tile and breadcrumb navigation.'),
-    '#attributes' => array('class' => array('info-fieldset')),
-  ];
-  $form['header']['header_page']['header_page_section'] = [
-    '#type'        => 'fieldset',
-    '#title'       => t('Page Header Padding'),
-  ];
-  $form['header']['header_page']['header_page_section']['header_page_padding_top'] = [
-    '#type'   => 'number',
-    '#min'  => 0.1,
-    '#max'  => 10,
-    '#step' => 0.1,
-    '#title'  => t('Padding Top (rem)'),
-    '#default_value' => theme_get_setting('header_page_padding_top'),
-    '#description'   => t("Default padding top is <strong>5rem</strong><br /><br /><p><hr /></p>"),
-  ];
-  $form['header']['header_page']['header_page_section']['header_page_padding_bottom'] = [
-    '#type'   => 'number',
-    '#min'  => 0.1,
-    '#max'  => 10,
-    '#step' => 0.1,
-    '#title'  => t('Padding Bottom (rem)'),
-    '#default_value' => theme_get_setting('header_page_padding_bottom'),
-    '#description'   => t("Default padding bottom is <strong>5rem</strong>."),
   ];
   $form['header']['header_page']['header_page_position_section'] = [
     '#type'        => 'fieldset',
@@ -413,85 +307,6 @@ function xara_form_system_theme_settings_alter(&$form, &$form_state) {
     '#description'   => t('This feature is available in the premium version of this theme. <a href="https://www.drupar.com/theme/xarapro" target="_blank">Buy XaraPro for $29 only.</a>'),
     '#group' => 'sidebar_tab',
   ];
-  // Sidebar -> Sidebar Block
-  $form['sidebar']['sidebar_block'] = [
-    '#type'          => 'details',
-    '#title'         => t('Sidebar Blocks'),
-    '#group' => 'sidebar_tab',
-  ];
-  $form['sidebar']['sidebar_block']['sidebar_block_default_section'] = [
-    '#type'        => 'fieldset',
-    '#title'       => t('Use Default Sidebars Block Settings'),
-    '#attributes' => array('class' => array('set-default-fieldset')),
-  ];
-  $form['sidebar']['sidebar_block']['sidebar_block_default_section']['sidebar_block_default'] = [
-    '#type'          => 'checkbox',
-    '#title'         => t('Use theme default sidebar block settings.'),
-    '#default_value' => theme_get_setting('sidebar_block_default'),
-    '#description'   => t('Check this option to use theme default value of sidebar block. Uncheck this to set custom value below.'),
-  ];
-  $form['sidebar']['sidebar_block']['sidebar_block_section'] = [
-    '#type'        => 'fieldset',
-    '#title'       => t('Sidebar Block'),
-  ];
-  $form['sidebar']['sidebar_block']['sidebar_block_section']['sidebar_padding'] = [
-    '#type'   => 'number',
-    '#min'  => 0,
-    '#max'  => 50,
-    '#step' => 1,
-    '#title'  => t('Sidebar Block Padding (px)'),
-    '#default_value' => theme_get_setting('sidebar_padding'),
-    '#description'   => t("Default is 20px.<br /><br /><p><hr /></p>"),
-  ];
-  $form['sidebar']['sidebar_block']['sidebar_block_section']['sidebar_radius'] = [
-    '#type'   => 'number',
-    '#min'  => 0,
-    '#max'  => 50,
-    '#step' => 1,
-    '#title'  => t('Sidebar Block Border Radius (px)'),
-    '#default_value' => theme_get_setting('sidebar_radius'),
-    '#description'   => t("Default is 6px.<br /><br /><p><hr /></p>"),
-  ];
-  $form['sidebar']['sidebar_block']['sidebar_block_section']['sidebar_margin'] = [
-    '#type'   => 'number',
-    '#min'  => 0,
-    '#max'  => 50,
-    '#step' => 1,
-    '#title'  => t('Sidebar Block Margin Bottom (rem)'),
-    '#default_value' => theme_get_setting('sidebar_margin'),
-    '#description'   => t("Default value is 2rem which is equivalent to 32px.<br />1rem = 16px"),
-  ];
-  $form['sidebar']['sidebar_block']['sidebar_title_section'] = [
-    '#type'        => 'fieldset',
-    '#title'       => t('Sidebar Block Title'),
-  ];
-  $form['sidebar']['sidebar_block']['sidebar_title_section']['sidebar_title_font_size'] = [
-    '#type'   => 'number',
-    '#min'  => 1,
-    '#max'  => 50,
-    '#step' => 0.1,
-    '#title'  => t('Font Size (rem)'),
-    '#default_value' => theme_get_setting('sidebar_title_font_size'),
-    '#description'   => t("Default value is 2.2rem<br />1rem = 16px<br /><br /><p><hr /></p>"),
-  ];
-  $form['sidebar']['sidebar_block']['sidebar_title_section']['sidebar_title_transform'] = [
-    '#type'          => 'select',
-    '#title'  => t('Transform'),
-    '#options' => array(
-    	'none' => t('None'),
-      'capitalize' => t('Capitalize'),
-      'uppercase' => t('Uppercase'),
-      'lowercase' => t('Lowercase'),
-    ),
-    '#default_value' => theme_get_setting('sidebar_title_transform'),
-    '#description'   => t("Default value is <strong>None</strong>."),
-  ];
-  $form['sidebar']['sidebar_block']['sidebar_block_color'] = [
-    '#type'          => 'details',
-    '#title'         => t('Sidebar Block Background Color'),
-    '#description'   => t('Color option is available in the premium version of this theme. <a href="https://www.drupar.com/theme/xarapro" target="_blank">Buy XaraPro for $29 only.</a>'),
-    '#open' => TRUE,
-  ];
   /*
    * Content
    */
@@ -565,32 +380,10 @@ function xara_form_system_theme_settings_alter(&$form, &$form_state) {
   /*
    * Footer
    */
-  $form['footer']['footer_tab'] = [
-    '#type'  => 'vertical_tabs',
-  ];
-  // Footer -> Footer Presets
-  $form['footer']['footer_presets'] = [
-    '#type'        => 'details',
-    '#title'       => t('Footer Presets / Styles'),
-    '#description'   => t('coming soon..'),
-    '#group' => 'footer_tab',
-  ];
-  $form['footer']['footer_presets']['footer_style'] = [
-    '#type'        => 'radios',
-    '#title'       => t('Select A Style'),
-    '#options' => array(
-    	'footer_style_one' => t('Classic'),
-      'footer_style_two' => t('Inverted'),
-      'footer_style_three' => t('Centerted'),
-      'footer_style_four' => t('Spaced'),
-    ),
-    '#disabled'   => TRUE
-  ];
   // Footer -> Copyright.
   $form['footer']['copyright'] = [
-    '#type'        => 'details',
+    '#type'        => 'fieldset',
     '#title'       => t('Copyright Text'),
-    '#group' => 'footer_tab',
   ];
 
   $form['footer']['copyright']['copyright_text'] = [
@@ -643,14 +436,9 @@ function xara_form_system_theme_settings_alter(&$form, &$form_state) {
   /*
    * Typography
    */
-  $form['typography']['typography_tab'] = [
-    '#type'  => 'vertical_tabs',
-  ];
-  // Typography -> Body
   $form['typography']['body'] = [
-    '#type'  => 'details',
+    '#type'  => 'fieldset',
     '#title' => t('Body'),
-    '#group' => 'typography_tab',
   ];
   $form['typography']['body']['body_font_size_section'] = [
     '#type'        => 'details',
@@ -667,438 +455,12 @@ function xara_form_system_theme_settings_alter(&$form, &$form_state) {
     '#default_value' => theme_get_setting('body_font_size'),
     '#description'   => t("Default size is 1rem"),
   ];
-  $form['typography']['body']['body_line_height_section'] = [
-    '#type'        => 'details',
-    '#title'       => t('Line Height'),
-    '#open' => TRUE,
-  ];
-  $form['typography']['body']['body_line_height_section']['body_line_height'] = [
-    '#type'   => 'number',
-    '#min'  => 1,
-    '#max'  => 3,
-    '#step' => 0.1,
-    '#default_value' => theme_get_setting('body_line_height'),
-    '#description'   => t("Default value is 1.7"),
-  ];
-  // Typography -> Paragraph
-  $form['typography']['paragraph'] = [
-    '#type'  => 'details',
-    '#title' => t('Paragraph'),
-    '#group' => 'typography_tab',
-  ];
-  $form['typography']['paragraph']['paragraph_section'] = [
-    '#type'        => 'details',
-    '#title'       => t('Paragraph Margin Bottom'),
-    '#open' => TRUE,
-    '#description'   => t("Value is in <strong>rem</strong> unit. 1 rem = 16px"),
-  ];
-  $form['typography']['paragraph']['paragraph_section']['paragraph_bottom'] = [
-    '#type'   => 'number',
-    '#min'  => 0,
-    '#max'  => 3,
-    '#step' => 0.1,
-    '#default_value' => theme_get_setting('paragraph_bottom'),
-    '#description'   => t("Default size is <strong>1.2rem</strong>."),
-  ];
-  // Typography -> Headings
-  $form['typography']['headings'] = [
-    '#type'  => 'details',
-    '#title' => t('Headings'),
-    '#group' => 'typography_tab',
-  ];
-  $form['typography']['headings']['headings_default_section'] = [
-    '#type'        => 'fieldset',
-    '#title'       => t('Use Default Heading Values'),
-    '#attributes' => array('class' => array('set-default-fieldset')),
-  ];
-  $form['typography']['headings']['headings_default_section']['headings_default'] = [
-    '#type'          => 'checkbox',
-    '#title'         => t('Use theme default heading values.'),
-    '#default_value' => theme_get_setting('headings_default'),
-    '#description'   => t('Check this option to use theme default value for headings. Uncheck this to set custom value below.'),
-  ];
-  $form['typography']['headings']['headings_section_info'] = [
-    '#type'  => 'fieldset',
-    '#title' => t('Please Note'),
-    '#description'   => t('<p>Below settings for heading will only apply to large screens (laptop and desktop).</p><p>If you want to modify headings for small devices (mobile and tablet), please use <strong>Custom Styling</strong> section.</p>'),
-    '#attributes' => array('class' => array('info-fieldset')),
-  ];
-  $form['typography']['headings']['h1'] = [
-    '#type'        => 'details',
-    '#title'       => t('Heading 1 (H1)'),
-  ];
-  $form['typography']['headings']['h1']['h1_size'] = [
-    '#type'   => 'number',
-    '#min'  => 1,
-    '#max'  => 5,
-    '#step' => 0.1,
-    '#title'  => t('Font Size (rem)'),
-    '#default_value' => theme_get_setting('h1_size'),
-    '#description'   => t("Value is in <strong>rem</strong> unit. 1 rem = 16px<br />Default size is 2.2rem.<br /><br /><p><hr /></p>"),
-  ];
-  $form['typography']['headings']['h1']['h1_weight'] = [
-    '#type'   => 'select',
-    '#title'  => t('Font Weight'),
-    '#options' => array(
-      '400' => t('400'),
-      '700' => t('700'),
-    ),
-    '#default_value' => theme_get_setting('h1_weight'),
-    '#description'   => t("Default value is <strong>700</strong>.<br /><br /><p><hr /></p>"),
-  ];
-  $form['typography']['headings']['h1']['h1_transform'] = [
-    '#type'          => 'select',
-    '#title'  => t('Transform'),
-    '#options' => array(
-    	'none' => t('None'),
-      'capitalize' => t('Capitalize'),
-      'uppercase' => t('Uppercase'),
-      'lowercase' => t('Lowercase'),
-    ),
-    '#default_value' => theme_get_setting('h1_transform'),
-    '#description'   => t("Default value is <strong>None</strong>.<br /><br /><p><hr /></p>"),
-  ];
-  $form['typography']['headings']['h1']['h1_height'] = [
-    '#type'   => 'number',
-    '#min'  => 1,
-    '#max'  => 3,
-    '#step' => 0.1,
-    '#title'  => t('Line Height'),
-    '#default_value' => theme_get_setting('h1_height'),
-    '#description'   => t("Default size is 1.7"),
-  ];
-  $form['typography']['headings']['h2'] = [
-    '#type'        => 'details',
-    '#title'       => t('Heading 2 (H2)'),
-  ];
-  $form['typography']['headings']['h2']['h2_size'] = [
-    '#type'   => 'number',
-    '#min'  => 1,
-    '#max'  => 5,
-    '#step' => 0.1,
-    '#title'  => t('Font Size (rem)'),
-    '#default_value' => theme_get_setting('h2_size'),
-    '#description'   => t("Value is in <strong>rem</strong> unit. 1 rem = 16px<br />Default size is 1.9rem.<br /><br /><p><hr /></p>"),
-  ];
-  $form['typography']['headings']['h2']['h2_weight'] = [
-    '#type'   => 'select',
-    '#title'  => t('Font Weight'),
-    '#options' => array(
-      '400' => t('400'),
-      '700' => t('700'),
-    ),
-    '#default_value' => theme_get_setting('h2_weight'),
-    '#description'   => t("Default value is <strong>700</strong>.<br /><br /><p><hr /></p>"),
-  ];
-  $form['typography']['headings']['h2']['h2_transform'] = [
-    '#type'          => 'select',
-    '#title'  => t('Transform'),
-    '#options' => array(
-    	'none' => t('None'),
-      'capitalize' => t('Capitalize'),
-      'uppercase' => t('Uppercase'),
-      'lowercase' => t('Lowercase'),
-    ),
-    '#default_value' => theme_get_setting('h2_transform'),
-    '#description'   => t("Default value is <strong>None</strong>.<br /><br /><p><hr /></p>"),
-  ];
-  $form['typography']['headings']['h2']['h2_height'] = [
-    '#type'   => 'number',
-    '#min'  => 1,
-    '#max'  => 3,
-    '#step' => 0.1,
-    '#title'  => t('Line Height'),
-    '#default_value' => theme_get_setting('h2_height'),
-    '#description'   => t("Default size is 1.7"),
-  ];
-  $form['typography']['headings']['h3'] = [
-    '#type'        => 'details',
-    '#title'       => t('Heading 3 (H3)'),
-  ];
-  $form['typography']['headings']['h3']['h3_size'] = [
-    '#type'   => 'number',
-    '#min'  => 1,
-    '#max'  => 5,
-    '#step' => 0.1,
-    '#title'  => t('Font Size (rem)'),
-    '#default_value' => theme_get_setting('h3_size'),
-    '#description'   => t("Value is in <strong>rem</strong> unit. 1 rem = 16px<br />Default size is 1.6rem.<br /><br /><p><hr /></p>"),
-  ];
-  $form['typography']['headings']['h3']['h3_weight'] = [
-    '#type'   => 'select',
-    '#title'  => t('Font Weight'),
-    '#options' => array(
-      '400' => t('400'),
-      '700' => t('700'),
-    ),
-    '#default_value' => theme_get_setting('h3_weight'),
-    '#description'   => t("Default value is <strong>700</strong>.<br /><br /><p><hr /></p>"),
-  ];
-  $form['typography']['headings']['h3']['h3_transform'] = [
-    '#type'          => 'select',
-    '#title'  => t('Transform'),
-    '#options' => array(
-    	'none' => t('None'),
-      'capitalize' => t('Capitalize'),
-      'uppercase' => t('Uppercase'),
-      'lowercase' => t('Lowercase'),
-    ),
-    '#default_value' => theme_get_setting('h3_transform'),
-    '#description'   => t("Default value is <strong>None</strong>.<br /><br /><p><hr /></p>"),
-  ];
-  $form['typography']['headings']['h3']['h3_height'] = [
-    '#type'   => 'number',
-    '#min'  => 1,
-    '#max'  => 3,
-    '#step' => 0.1,
-    '#title'  => t('Line Height'),
-    '#default_value' => theme_get_setting('h3_height'),
-    '#description'   => t("Default size is 1.7"),
-  ];
-  $form['typography']['headings']['h4'] = [
-    '#type'        => 'details',
-    '#title'       => t('Heading 4 (H4)'),
-  ];
-  $form['typography']['headings']['h4']['h4_size'] = [
-    '#type'   => 'number',
-    '#min'  => 1,
-    '#max'  => 5,
-    '#step' => 0.1,
-    '#title'  => t('Font Size (rem)'),
-    '#default_value' => theme_get_setting('h4_size'),
-    '#description'   => t("Value is in <strong>rem</strong> unit. 1 rem = 16px<br />Default size is 1.3rem.<br /><br /><p><hr /></p>"),
-  ];
-  $form['typography']['headings']['h4']['h4_weight'] = [
-    '#type'   => 'select',
-    '#title'  => t('Font Weight'),
-    '#options' => array(
-      '400' => t('400'),
-      '700' => t('700'),
-    ),
-    '#default_value' => theme_get_setting('h4_weight'),
-    '#description'   => t("Default value is <strong>700</strong>.<br /><br /><p><hr /></p>"),
-  ];
-  $form['typography']['headings']['h4']['h4_transform'] = [
-    '#type'          => 'select',
-    '#title'  => t('Transform'),
-    '#options' => array(
-    	'none' => t('None'),
-      'capitalize' => t('Capitalize'),
-      'uppercase' => t('Uppercase'),
-      'lowercase' => t('Lowercase'),
-    ),
-    '#default_value' => theme_get_setting('h4_transform'),
-    '#description'   => t("Default value is <strong>None</strong>.<br /><br /><p><hr /></p>"),
-  ];
-  $form['typography']['headings']['h4']['h4_height'] = [
-    '#type'   => 'number',
-    '#min'  => 1,
-    '#max'  => 3,
-    '#step' => 0.1,
-    '#title'  => t('Line Height'),
-    '#default_value' => theme_get_setting('h4_height'),
-    '#description'   => t("Default size is 1.7"),
-  ];
-  $form['typography']['headings']['h5'] = [
-    '#type'        => 'details',
-    '#title'       => t('Heading 5 (H5)'),
-  ];
-  $form['typography']['headings']['h5']['h5_size'] = [
-    '#type'   => 'number',
-    '#min'  => 1,
-    '#max'  => 5,
-    '#step' => 0.1,
-    '#title'  => t('Font Size (rem)'),
-    '#default_value' => theme_get_setting('h5_size'),
-    '#description'   => t("Value is in <strong>rem</strong> unit. 1 rem = 16px<br />Default size is 1.1rem.<br /><br /><p><hr /></p>"),
-  ];
-  $form['typography']['headings']['h5']['h5_weight'] = [
-    '#type'   => 'select',
-    '#title'  => t('Font Weight'),
-    '#options' => array(
-      '400' => t('400'),
-      '700' => t('700'),
-    ),
-    '#default_value' => theme_get_setting('h5_weight'),
-    '#description'   => t("Default value is <strong>700</strong>.<br /><br /><p><hr /></p>"),
-  ];
-  $form['typography']['headings']['h5']['h5_transform'] = [
-    '#type'          => 'select',
-    '#title'  => t('Transform'),
-    '#options' => array(
-    	'none' => t('None'),
-      'capitalize' => t('Capitalize'),
-      'uppercase' => t('Uppercase'),
-      'lowercase' => t('Lowercase'),
-    ),
-    '#default_value' => theme_get_setting('h5_transform'),
-    '#description'   => t("Default value is <strong>None</strong>.<br /><br /><p><hr /></p>"),
-  ];
-  $form['typography']['headings']['h5']['h5_height'] = [
-    '#type'   => 'number',
-    '#min'  => 1,
-    '#max'  => 3,
-    '#step' => 0.1,
-    '#title'  => t('Line Height'),
-    '#default_value' => theme_get_setting('h5_height'),
-    '#description'   => t("Default size is 1.7"),
-  ];
-  $form['typography']['headings']['h6'] = [
-    '#type'        => 'details',
-    '#title'       => t('Heading 6 (H6)'),
-  ];
-  $form['typography']['headings']['h6']['h6_size'] = [
-    '#type'   => 'number',
-    '#min'  => 1,
-    '#max'  => 5,
-    '#step' => 0.1,
-    '#title'  => t('Font Size (rem)'),
-    '#default_value' => theme_get_setting('h6_size'),
-    '#description'   => t("Value is in <strong>rem</strong> unit. 1 rem = 16px<br />Default size is 1.1rem.<br /><br /><p><hr /></p>"),
-  ];
-  $form['typography']['headings']['h6']['h6_weight'] = [
-    '#type'   => 'select',
-    '#title'  => t('Font Weight'),
-    '#options' => array(
-      '400' => t('400'),
-      '700' => t('700'),
-    ),
-    '#default_value' => theme_get_setting('h6_weight'),
-    '#description'   => t("Default value is <strong>700</strong>.<br /><br /><p><hr /></p>"),
-  ];
-  $form['typography']['headings']['h6']['h6_transform'] = [
-    '#type'          => 'select',
-    '#title'  => t('Transform'),
-    '#options' => array(
-    	'none' => t('None'),
-      'capitalize' => t('Capitalize'),
-      'uppercase' => t('Uppercase'),
-      'lowercase' => t('Lowercase'),
-    ),
-    '#default_value' => theme_get_setting('h6_transform'),
-    '#description'   => t("Default value is <strong>None</strong>.<br /><br /><p><hr /></p>"),
-  ];
-  $form['typography']['headings']['h6']['h6_height'] = [
-    '#type'   => 'number',
-    '#min'  => 1,
-    '#max'  => 3,
-    '#step' => 0.1,
-    '#title'  => t('Line Height'),
-    '#default_value' => theme_get_setting('h6_height'),
-    '#description'   => t("Default size is 1.7"),
-  ];
+
   /*
    * Elements
    */
   $form['elements']['elements_tab'] = [
     '#type'  => 'vertical_tabs',
-  ];
-  // Elements -> Logo
-  $form['elements']['logo'] = [
-    '#type'  => 'details',
-    '#title' => t('Logo'),
-    '#group' => 'elements_tab',
-  ];
-  $form['elements']['logo']['logo_default_section'] = [
-    '#type'        => 'fieldset',
-    '#title'       => t('Use Default'),
-    '#attributes' => array('class' => array('set-default-fieldset')),
-  ];
-  $form['elements']['logo']['logo_default_section']['logo_default'] = [
-    '#type'          => 'checkbox',
-    '#title'         => t('Use Default Logo Settings'),
-    '#default_value' => theme_get_setting('logo_default'),
-    '#description'   => t('Check this option to use default values for sitename and site slogan. Uncheck this to set custom values below.'),
-  ];
-  $form['elements']['logo']['site_name'] = [
-    '#type'        => 'details',
-    '#title'       => t('Site Name'),
-    '#open' => TRUE,
-  ];
-  $form['elements']['logo']['site_name']['site_name_size'] = [
-    '#type'   => 'number',
-    '#min'  => 0.5,
-    '#max'  => 3,
-    '#step' => 0.1,
-    '#title'  => t('Font Size (rem)'),
-    '#default_value' => theme_get_setting('site_name_size'),
-    '#description'   => t("Default value is <strong>1rem</strong>.<br />1 rem = 16px<br /><br /><br /><p><hr /></p>"),
-  ];
-  $form['elements']['logo']['site_name']['site_name_weight'] = [
-    '#type'   => 'select',
-    '#title'  => t('Font Weight'),
-    '#options' => array(
-      '400' => t('400'),
-      '700' => t('700'),
-    ),
-    '#default_value' => theme_get_setting('site_name_weight'),
-    '#description'   => t("Default value is <strong>700</strong>.<br /><br /><p><hr /></p>"),
-  ];
-  $form['elements']['logo']['site_name']['site_name_transform'] = [
-    '#type'          => 'select',
-    '#title'  => t('Transform'),
-    '#options' => array(
-    	'none' => t('None'),
-      'capitalize' => t('Capitalize'),
-      'uppercase' => t('Uppercase'),
-      'lowercase' => t('Lowercase'),
-    ),
-    '#default_value' => theme_get_setting('site_name_transform'),
-    '#description'   => t("Default value is <strong>None</strong>.<br /><br /><p><hr /></p>"),
-  ];
-  $form['elements']['logo']['site_name']['site_name_height'] = [
-    '#type'   => 'number',
-    '#min'  => 1,
-    '#max'  => 3,
-    '#step' => 0.1,
-    '#title'  => t('Line Height'),
-    '#default_value' => theme_get_setting('site_name_height'),
-    '#description'   => t("Default size is 1.1"),
-  ];
-  $form['elements']['logo']['slogan'] = [
-    '#type'        => 'details',
-    '#title'       => t('Slogan'),
-    '#open' => TRUE,
-  ];
-  $form['elements']['logo']['slogan']['slogan_size'] = [
-    '#type'   => 'number',
-    '#min'  => 1,
-    '#max'  => 5,
-    '#step' => 0.1,
-    '#title'  => t('Font Size (rem)'),
-    '#default_value' => theme_get_setting('slogan_size'),
-    '#description'   => t("Value is in <strong>rem</strong> unit. 1 rem = 16px<br />Default size is 1rem.<br /><br /><p><hr /></p>"),
-  ];
-  $form['elements']['logo']['slogan']['slogan_transform'] = [
-    '#type'          => 'select',
-    '#title'  => t('Transform'),
-    '#options' => array(
-    	'none' => t('None'),
-      'capitalize' => t('Capitalize'),
-      'uppercase' => t('Uppercase'),
-      'lowercase' => t('Lowercase'),
-    ),
-    '#default_value' => theme_get_setting('slogan_transform'),
-    '#description'   => t("Default value is <strong>None</strong>.<br /><br /><p><hr /></p>"),
-  ];
-  $form['elements']['logo']['slogan']['slogan_height'] = [
-    '#type'   => 'number',
-    '#min'  => 1,
-    '#max'  => 3,
-    '#step' => 0.1,
-    '#title'  => t('Line Height'),
-    '#default_value' => theme_get_setting('slogan_height'),
-    '#description'   => t("Default size is 1.7"),
-  ];
-  $form['elements']['logo']['slogan']['slogan_style'] = [
-    '#type'          => 'select',
-    '#title'  => t('Style'),
-    '#options' => array(
-    	'normal' => t('Normal'),
-      'italic' => t('Italic'),
-    ),
-    '#default_value' => theme_get_setting('slogan_style'),
-    '#description'   => t("Default value is <strong>Normal</strong>."),
   ];
   // Elements -> Main menu
   $form['elements']['main_menu'] = [
@@ -1214,27 +576,16 @@ function xara_form_system_theme_settings_alter(&$form, &$form_state) {
   ];
   $form['elements']['page_title']['page_title_size_section'] = [
     '#type'        => 'details',
-    '#title'       => t('Font Size (rem)'),
     '#open' => TRUE,
-    '#description'   => t("Value is in rem unit. 1 rem = 16px"),
   ];
-  $form['elements']['page_title']['page_title_size_section']['page_title_size_desktop'] = [
+  $form['elements']['page_title']['page_title_size_section']['page_title_size'] = [
     '#type'   => 'number',
     '#min'  => 1,
     '#max'  => 5,
     '#step' => 0.1,
     '#title'  => t('Desktop and Laptop (rem)'),
-    '#default_value' => theme_get_setting('page_title_size_desktop'),
-    '#description'   => t("Default value is <strong>2.6rem</strong>.<br /><p><hr /></p>"),
-  ];
-  $form['elements']['page_title']['page_title_size_section']['page_title_size_mobile'] = [
-    '#type'   => 'number',
-    '#min'  => 1,
-    '#max'  => 5,
-    '#step' => 0.1,
-    '#title'  => t('Mobile and Tablet (rem)'),
-    '#default_value' => theme_get_setting('page_title_size_mobile'),
-    '#description'   => t("Default value is <strong>2.2rem</strong>."),
+    '#default_value' => theme_get_setting('page_title_size'),
+    '#description'   => t("Default value is <strong>2.6rem</strong>"),
   ];
   $form['elements']['page_title']['page_title_transform_section'] = [
     '#type'        => 'details',
@@ -1251,67 +602,6 @@ function xara_form_system_theme_settings_alter(&$form, &$form_state) {
     ),
     '#default_value' => theme_get_setting('page_title_transform'),
     '#description'   => t("Default value is <strong>None</strong>."),
-  ];
-  // Elements -> Breadcrumb.
-  $form['elements']['breadcrumb'] = [
-    '#type'  => 'details',
-    '#title' => t('Breadcrumb'),
-    '#group' => 'elements_tab',
-  ];
-  $form['elements']['breadcrumb']['breadcrumb_icon'] = [
-    '#type'        => 'details',
-    '#title'       => t('Breadcrumb Separator Icon'),
-    '#open' => TRUE,
-  ];
-  $form['elements']['breadcrumb']['breadcrumb_icon']['breadcrumb_icon_style'] = [
-    '#type'          => 'radios',
-    '#title'         => t('Select Breadcrumb Separator Icon<br /><br />'),
-    '#options' => array(
-      '&#x276F;' => t('<span style="font-size: 24px">&#x276F;</span><br /><br />'),
-      '&#x27F6;' => t('<span style="font-size: 24px">&#x27F6;</span><br /><br />'),
-      '&#x203A;' => t('<span style="font-size: 24px">&#x203A;</span><br /><br />'),
-      '&#x279D;' => t('<span style="font-size: 24px">&#x279D;</span><br /><br />'),
-      '/' => t('<span style="font-size: 24px">/</span><br /><br />'),
-      '/' => t('<span style="font-size: 2rem">\</span><br /><br />'),
-    ),
-    '#default_value' => theme_get_setting('breadcrumb_icon_style'),
-  ];
-  // Elements -> Button
-  $form['elements']['button'] = [
-    '#type'  => 'details',
-    '#title' => t('Button'),
-    '#group' => 'elements_tab',
-  ];
-  $form['elements']['button']['button_default_section'] = [
-    '#type'        => 'fieldset',
-    '#title'       => t('Use Default'),
-    '#attributes' => array('class' => array('set-default-fieldset')),
-  ];
-  $form['elements']['button']['button_default_section']['button_default'] = [
-    '#type'          => 'checkbox',
-    '#title'         => t('Use Default Main Menu Settings'),
-    '#default_value' => theme_get_setting('button_default'),
-    '#description'   => t('Check this option to use default main menu settings. Uncheck this to set custom values below.'),
-  ];
-  $form['elements']['button']['button_section'] = [
-    '#type'        => 'details',
-    '#title'       => t('Button Padding'),
-    '#open' => TRUE,
-  ];
-  $form['elements']['button']['button_section']['button_padding'] = [
-    '#type'   => 'textfield',
-    '#title'  => t('Top Right Bottom Left'),
-    '#default_value' => theme_get_setting('button_padding'),
-    '#description'   => t("Padding of button. Example: <strong>5px 10px 5px 10px</strong><br />
-    Default value is: 8px 10px 8px 10px<br /><p><hr /></p>"),
-  ];
-  $form['elements']['button']['button_section']['button_radius'] = [
-    '#type'   => 'number',
-    '#min'  => 0,
-    '#step' => 1,
-    '#title'  => t('Border Radius (px)'),
-    '#default_value' => theme_get_setting('button_radius'),
-    '#description'   => t("Border radius of buttons. Default value is 8px."),
   ];
   /*
    * Components
@@ -1489,7 +779,7 @@ function xara_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['components']['node_share'] = [
     '#type'        => 'details',
     '#title'       => t('Share Page'),
-    '#description'   => t('<h3>Share Page On Social networking websites</h3><p>This feature is available in the premium version of this theme. <a href="https://www.drupar.com/theme/xarapro" target="_blank">Buy XaraPro for $29 only.</a></p>'),
+    '#description'   => t('<h4>Share Page On Social networking websites</h4><p>This feature is available in the premium version of this theme. <a href="https://www.drupar.com/theme/xarapro" target="_blank">Buy XaraPro for $29 only.</a></p>'),
     '#group' => 'components_tab',
   ];
   // Components -> Font icons
@@ -1517,6 +807,17 @@ function xara_form_system_theme_settings_alter(&$form, &$form_state) {
     '#title'         => t('Enable FontAwesome 5 Font Icons'),
     '#default_value' => theme_get_setting('fontawesome_five'),
     '#description'   => t('Check this option to enable fontawesome version 5 font icons.'),
+  ];
+  $form['components']['font_icons']['fontawesome6'] = [
+    '#type'          => 'fieldset',
+    '#title'         => t('FontAwesome 6'),
+  ];
+  $form['components']['font_icons']['fontawesome6']['fontawesome_six'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Enable FontAwesome 6 Font Icons'),
+    '#default_value' => theme_get_setting('fontawesome_six'),
+    '#description'   => t('This feature is available in the premium version of this theme. <a href="https://drupar.com/theme/xarapro" target="_blank">Buy XaraPro for $29 only.</a>'),
+    '#disabled'   => TRUE,
   ];
 	$form['components']['font_icons']['bootstrap_icons'] = [
     '#type'          => 'fieldset',
@@ -1570,74 +871,7 @@ function xara_form_system_theme_settings_alter(&$form, &$form_state) {
     '#default_value' => theme_get_setting('scrolltotop_on'),
     '#description'   => t("Check this option to enable scroll to top feature. Uncheck to disable this fearure and hide scroll to top icon."),
   ];
-  $form['components']['scrolltotop']['scrolltotop_default_section'] = [
-    '#type'        => 'fieldset',
-    '#title'       => t('Use Default Settings'),
-    '#attributes' => array('class' => array('set-default-fieldset')),
-  ];
-  $form['components']['scrolltotop']['scrolltotop_default_section']['scrolltotop_default'] = [
-    '#type'          => 'checkbox',
-    '#title'         => t('Use theme default settings of Scroll To Top.'),
-    '#default_value' => theme_get_setting('scrolltotop_default'),
-    '#description'   => t('Check this option to use theme default settings of scroll to top. Uncheck this to set custom value below.'),
-  ];
-  $form['components']['scrolltotop']['scrolltotop_icon'] = [
-    '#type'        => 'details',
-    '#title'       => t('Scroll To Top Icon'),
-    '#open' => TRUE,
-  ];
-  $form['components']['scrolltotop']['scrolltotop_icon']['scrolltotop_icon_style'] = [
-    '#type'          => 'radios',
-    '#title'         => t('<p>Select Arrow Icon</p>'),
-    '#options' => array(
-      '&#129121;' => t('<span style="font-size: 2rem">&#129121;</span><br /><br />'),
-      '&#x21e1;' => t('<span style="font-size: 2rem; font-weight: 700">&#x21e1;</span><br /><br />'),
-      '&#11165;' => t('<span style="font-size: 2rem">&#11165;</span><br /><br />'),
-      '&#129041;' => t('<span style="font-size: 2rem">&#129041;</span><br /><br />'),
-      '&#9650;' => t('<span style="font-size: 2rem">&#9650;</span><br /><br />'),
-    ),
-    '#default_value' => theme_get_setting('scrolltotop_icon_style'),
-  ];
-  $form['components']['scrolltotop']['scrolltotop_shape_section'] = [
-    '#type'        => 'details',
-    '#title'       => t('Icon Shape'),
-    '#open' => TRUE,
-  ];
-  $form['components']['scrolltotop']['scrolltotop_shape_section']['scrolltotop_icon_size'] = [
-    '#type'   => 'number',
-    '#title'  => t('Icon Size (px)'),
-    '#default_value' => theme_get_setting('scrolltotop_icon_size'),
-    '#description' => t('Default value is 20px.<p><hr /></p>'),
-  ];
-  $form['components']['scrolltotop']['scrolltotop_shape_section']['scrolltotop_icon_radius'] = [
-    '#type'   => 'textfield',
-    '#title'  => t('Border Radius'),
-    '#default_value' => theme_get_setting('scrolltotop_icon_radius'),
-    '#description' => t('Default value is 50%.<br />You can use <strong>px</strong> (example 10px) or <strong>percentage</strong> (example 50%) unit.<p><hr /></p>'),
-  ];
-  $form['components']['scrolltotop']['scrolltotop_position_section'] = [
-    '#type'        => 'details',
-    '#title'       => t('Icon Position'),
-    '#open' => TRUE,
-  ];
-  $form['components']['scrolltotop']['scrolltotop_position_section']['scrolltotop_position'] = [
-    '#type'          => 'radios',
-    '#title'       => t('Left or Right Position'),
-    '#options' => array(
-    	'left' => t('<span style="' . $button . '">LEFT</span>'),
-      'right' => t('<span style="' . $button . '">RIGHT</span>'),
-    ),
-    '#default_value' => theme_get_setting('scrolltotop_position'),
-    '#description' => t('Default value is Right.<br /><p><hr /></p>'),
-  ];
-  $form['components']['scrolltotop']['scrolltotop_position_section']['scrolltotop_bottom'] = [
-    '#type'   => 'number',
-    '#min'  => 0,
-    '#step' => 1,
-    '#title'  => t('Bottom Position (px)'),
-    '#default_value' => theme_get_setting('scrolltotop_bottom'),
-    '#description' => t('Default value is 10px'),
-  ];
+
   /**
    * Color Options
    */
@@ -1723,7 +957,7 @@ function xara_form_system_theme_settings_alter(&$form, &$form_state) {
   // Settings under upgrade tab.
   $form['upgrade']['info'] = [
     '#type'        => 'fieldset',
-    '#title'       => t('<p><a href="https://demo2.drupar.com/xarapro/" target="_blank">xaraPro Demo</a> | <a href="https://www.drupar.com/theme/xarapro" target="_blank">Purchase XaraPro for $29 only</a></p>'),
+    '#title'       => t('<p><a href="https://demo2.drupar.com/xarapro/" target="_blank">XaraPro Demo</a> | <a href="https://www.drupar.com/theme/xarapro" target="_blank">Purchase XaraPro for $29 only</a></p>'),
     '#description' => t("$xarapro"),
   ];
 // End form.

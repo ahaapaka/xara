@@ -59,12 +59,6 @@ function xara_preprocess_page(array &$variables) {
 	};
 
 	// Header
-	$variables['header_main_default'] = theme_get_setting('header_main_default');
-	$variables['header_main_padding_top'] = theme_get_setting('header_main_padding_top');
-	$variables['header_main_padding_bottom'] = theme_get_setting('header_main_padding_bottom');
-	$variables['header_page_default'] = theme_get_setting('header_page_default');
-	$variables['header_page_padding_top'] = theme_get_setting('header_page_padding_top');
-	$variables['header_page_padding_bottom'] = theme_get_setting('header_page_padding_bottom');
 	$variables['header_page_content_position'] = theme_get_setting('header_page_content_position');
 
 	// Sidebar
@@ -72,12 +66,6 @@ function xara_preprocess_page(array &$variables) {
 	$variables['sidebar_width_default'] = theme_get_setting('sidebar_width_default');
 	$variables['sidebar_width_left'] = theme_get_setting('sidebar_width_left');
 	$variables['sidebar_width_right'] = theme_get_setting('sidebar_width_right');
-	$variables['sidebar_block_default'] = theme_get_setting('sidebar_block_default');	
-	$variables['sidebar_padding'] = theme_get_setting('sidebar_padding');
-	$variables['sidebar_radius'] = theme_get_setting('sidebar_radius');
-	$variables['sidebar_margin'] = theme_get_setting('sidebar_margin');
-	$variables['sidebar_title_font_size'] = theme_get_setting('sidebar_title_font_size');
-	$variables['sidebar_title_transform'] = theme_get_setting('sidebar_title_transform');
 
 	// Footer
 	$variables['copyright_text'] = theme_get_setting('copyright_text');
@@ -100,44 +88,8 @@ function xara_preprocess_page(array &$variables) {
 
 	// Typography
 	$variables['body_font_size'] = theme_get_setting('body_font_size');
-	$variables['body_line_height'] = theme_get_setting('body_line_height');
-	$variables['paragraph_bottom'] = theme_get_setting('paragraph_bottom');
-	$variables['headings_default'] = theme_get_setting('headings_default');
-	$variables['h1_size'] = theme_get_setting('h1_size');
-	$variables['h1_weight'] = theme_get_setting('h1_weight');
-	$variables['h1_transform'] = theme_get_setting('h1_transform');
-	$variables['h1_height'] = theme_get_setting('h1_height');
-	$variables['h2_size'] = theme_get_setting('h2_size');
-	$variables['h2_weight'] = theme_get_setting('h2_weight');
-	$variables['h2_transform'] = theme_get_setting('h2_transform');
-	$variables['h2_height'] = theme_get_setting('h2_height');
-	$variables['h3_size'] = theme_get_setting('h3_size');
-	$variables['h3_weight'] = theme_get_setting('h3_weight');
-	$variables['h3_transform'] = theme_get_setting('h3_transform');
-	$variables['h3_height'] = theme_get_setting('h3_height');
-	$variables['h4_size'] = theme_get_setting('h4_size');
-	$variables['h4_weight'] = theme_get_setting('h4_weight');
-	$variables['h4_transform'] = theme_get_setting('h4_transform');
-	$variables['h4_height'] = theme_get_setting('h4_height');
-	$variables['h5_size'] = theme_get_setting('h5_size');
-	$variables['h5_weight'] = theme_get_setting('h5_weight');
-	$variables['h5_transform'] = theme_get_setting('h5_transform');
-	$variables['h5_height'] = theme_get_setting('h5_height');
-	$variables['h6_size'] = theme_get_setting('h6_size');
-	$variables['h6_weight'] = theme_get_setting('h6_weight');
-	$variables['h6_transform'] = theme_get_setting('h6_transform');
-	$variables['h6_height'] = theme_get_setting('h6_height');
 
-	// Element -> Logo
-	$variables['logo_default'] = theme_get_setting('logo_default');
-	$variables['site_name_size'] = theme_get_setting('site_name_size');
-	$variables['site_name_weight'] = theme_get_setting('site_name_weight');
-	$variables['site_name_transform'] = theme_get_setting('site_name_transform');
-	$variables['site_name_height'] = theme_get_setting('site_name_height');
-	$variables['slogan_size'] = theme_get_setting('slogan_size');
-	$variables['slogan_transform'] = theme_get_setting('slogan_transform');
-	$variables['slogan_height'] = theme_get_setting('slogan_height');
-	$variables['slogan_style'] = theme_get_setting('slogan_style');
+	// Element -> Header menu
 	$variables['main_menu_default'] = theme_get_setting('main_menu_default');
 	$variables['main_menu_top_size'] = theme_get_setting('main_menu_top_size');
 	$variables['main_menu_top_weight'] = theme_get_setting('main_menu_top_weight');
@@ -148,14 +100,8 @@ function xara_preprocess_page(array &$variables) {
 	
 	// Element -> Page title
 	$variables['page_title_default'] = theme_get_setting('page_title_default');
-	$variables['page_title_size_desktop'] = theme_get_setting('page_title_size_desktop');
-	$variables['page_title_size_mobile'] = theme_get_setting('page_title_size_mobile');
+	$variables['page_title_size'] = theme_get_setting('page_title_size');
 	$variables['page_title_transform'] = theme_get_setting('page_title_transform');
-
-	// Element -> Button
-	$variables['button_default'] = theme_get_setting('button_default');
-	$variables['button_padding'] = theme_get_setting('button_padding');
-	$variables['button_radius'] = theme_get_setting('button_radius');
 
 	// Components -> Font icons
 	$variables['fontawesome_four'] = theme_get_setting('fontawesome_four');
@@ -164,12 +110,6 @@ function xara_preprocess_page(array &$variables) {
 	
 	// Components -> scroll to top
 	$variables['scrolltotop_on'] = theme_get_setting('scrolltotop_on');
-	$variables['scrolltotop_default'] = theme_get_setting('scrolltotop_default');
-	$variables['scrolltotop_icon_style'] = theme_get_setting('scrolltotop_icon_style');
-	$variables['scrolltotop_icon_size'] = theme_get_setting('scrolltotop_icon_size');
-	$variables['scrolltotop_position'] = theme_get_setting('scrolltotop_position');
-	$variables['scrolltotop_bottom'] = theme_get_setting('scrolltotop_bottom');
-	$variables['scrolltotop_icon_radius'] = theme_get_setting('scrolltotop_icon_radius');
 	
 	// Comment
 	$variables['highlight_author_comment'] = theme_get_setting('highlight_author_comment');
@@ -187,11 +127,4 @@ function xara_preprocess_node(array &$variables) {
  */
 function xara_preprocess_comment(array &$variables) {
 	$variables['comment_user_pic'] = theme_get_setting('comment_user_pic');
-}
-
-/**
- * Breadcrumb preprocess.
- */
-function xara_preprocess_breadcrumb(&$variables) {
-	$variables['breadcrumb_icon_style'] = theme_get_setting('breadcrumb_icon_style');
 }

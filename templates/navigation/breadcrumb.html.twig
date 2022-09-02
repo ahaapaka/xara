@@ -13,7 +13,7 @@
     {% for item in breadcrumb %}
       <li class="breadcrumb-item">
         {% if item.url %}
-          <a href="{{ item.url }}">{{ item.text }}</a> <span>{{ breadcrumb_icon_style | raw }}</span>
+          <a href="{{ item.url }}">{{ item.text }}</a> <span>&#x27F6;</span>
         {% else %}
           {{ item.text }}
         {% endif %}
