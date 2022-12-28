@@ -3,9 +3,10 @@
  * @file
  * Custom setting for XARA theme.
  */
-function xara_form_system_theme_settings_alter(&$form, &$form_state) {
-  $theme_path = drupal_get_path('theme', 'xara');
-  $image_folder = $GLOBALS['base_url'] . '/' . drupal_get_path('theme', 'xara') . '/images/theme-settings/';
+use Drupal\Core\Form\FormStateInterface;
+
+function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+  $image_folder = $GLOBALS['base_url'] . '/' . \Drupal::service('extension.list.theme')->getPath('xara') . '/images/theme-settings/';
   $button = "display: inline-block; background: #0984e3; color: white; margin-bottom: 10px; padding: 5px 10px";
   $xarapro = '<img src="' . $image_folder . 'xarapro.png" />';
 	$form['#attached']['library'][] = 'xara/theme-settings';
