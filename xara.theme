@@ -48,7 +48,7 @@ function xara_preprocess_page(array &$variables) {
 	$slider_image_id = theme_get_setting('slider_image', 'xara');
 	if(!empty($slider_image_id)) {
 		$slider_image_file = File::load($slider_image_id[0]);
-		$slider_image_file->status = FILE_STATUS_PERMANENT;
+		$slider_image_file->setPermanent();
 		$slider_image_file->save();
 		$slider_image_file_usage = \Drupal::service('file.usage');
 		$slider_image_file_usage->add($slider_image_file, 'xara', 'theme', $slider_image_id[0]);
