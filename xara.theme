@@ -24,7 +24,7 @@ function santise_val_url($url) {
 }
 function xara_preprocess_html(&$variables) {
 	$variables['base_path'] = base_path();
-  $variables['xara_path'] = drupal_get_path('theme', 'xara');
+  $variables['xara_path'] = \Drupal::service('extension.list.theme')->getPath('xara');
 	$variables['font_src'] = theme_get_setting('font_src');
 	$variables['styling'] = theme_get_setting('styling');
 	$variables['styling_code'] = theme_get_setting('styling_code');
@@ -33,7 +33,7 @@ function xara_preprocess_html(&$variables) {
 }
 function xara_preprocess_page(array &$variables) {
 	// theme path
-	$variables['page_xara_path'] = drupal_get_path('theme', 'xara');
+	$variables['page_xara_path'] = \Drupal::service('extension.list.theme')->getPath('xara');
 	
 	// Layout
 	$variables['container_width'] = theme_get_setting('container_width');
@@ -48,14 +48,14 @@ function xara_preprocess_page(array &$variables) {
 	$slider_image_id = theme_get_setting('slider_image', 'xara');
 	if(!empty($slider_image_id)) {
 		$slider_image_file = File::load($slider_image_id[0]);
-		$slider_image_file->status = FILE_STATUS_PERMANENT;
+		$slider_image_file->setPermanent();
 		$slider_image_file->save();
 		$slider_image_file_usage = \Drupal::service('file.usage');
 		$slider_image_file_usage->add($slider_image_file, 'xara', 'theme', $slider_image_id[0]);
 	};
 	if(!empty($slider_image_file)) {
     $imageuri = $slider_image_file->getFileUri();
-    $variables['slider_image_path'] = file_create_url($imageuri);
+    $variables['slider_image_path'] = Drupal::service('file_url_generator')->generateAbsoluteString($imageuri);
 	};
 
 	// Header
