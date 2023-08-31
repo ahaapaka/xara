@@ -10,3 +10,13 @@ Version 10.1.1
 22 Jan, 2023
 +===============================+
 # Fixed slider image upload issue.
+
+
++===============================+
+Version 10.1.2
+31 Aug, 2023
++===============================+
+- Updated for base theme TheX v10.x.x
+- Theme now uses font icons from theX theme.
+- Updated twitter icon by new X icon.
+- Other minor imprevements.
