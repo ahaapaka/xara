@@ -38,19 +38,7 @@
   box-shadow: none;
 }
 .mobile-menu span {
-  background-color: var(--primary);
-}
-.menu-wrap {
-  background-color: var(--primary);
-}
-.menu-wrap ul.menu li > a {
-  padding: 10px;
-}
-.menu-wrap {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  justify-content: center;
+  background-color: var(--dark);
 }
 .page-header {
   background-color: var(--light);

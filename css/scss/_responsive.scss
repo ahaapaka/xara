@@ -6,8 +6,10 @@
   .menu-wrap .menu a {
     color: var(--color-heading);
   }
-  .menu .expanded:hover {
-    background-color: var(--primary);
+  .menu-wrap .collapsed:hover,
+  .menu-wrap .expanded:hover,
+  .menu-wrap .menu-item-has-children:hover {
+    background-color: var(--light);
   }
   .page-header {
     padding: 4rem 0 10rem 0;
