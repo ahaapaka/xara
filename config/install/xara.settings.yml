@@ -73,6 +73,3 @@ scrolltotop_on: 1
 # Custom styling
 styling: 0
 styling_code: ''
-
-# Test
-bgcolor: '#00cec9'

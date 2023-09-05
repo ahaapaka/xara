@@ -120,7 +120,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
   ];
   $form['layout']['layout_container']['container_width'] = [
     '#type'          => 'number',
-    '#default_value' => theme_get_setting('container_width'),
+    '#default_value' => theme_get_setting('container_width', 'xara'),
     '#description'   => t('Set width of the container in px. Default width is 1170px.'),
   ];
   // Layout -> Header Layout
@@ -133,7 +133,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
     '#options' => array(
     	'header_width_contained' => t('contained'),
     	'header_width_full' => t('Full Width'),),
-    '#default_value' => theme_get_setting('header_width'),
+    '#default_value' => theme_get_setting('header_width', 'xara'),
   ];
   // Layout -> Main Layout
   $form['layout']['layout_main'] = [
@@ -145,7 +145,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
     '#options' => array(
     	'main_width_contained' => t('contained'),
     	'main_width_full' => t('Full Width'),),
-    '#default_value' => theme_get_setting('main_width'),
+    '#default_value' => theme_get_setting('main_width', 'xara'),
   ];
   // Layout -> Footer Layout
   $form['layout']['layout_footer'] = [
@@ -157,7 +157,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
     '#options' => array(
     	'footer_width_contained' => t('contained'),
     	'footer_width_full' => t('Full Width'),),
-    '#default_value' => theme_get_setting('footer_width'),
+    '#default_value' => theme_get_setting('footer_width', 'xara'),
   ];
   /*
    * Homepage slider
@@ -170,7 +170,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
   $form['slider']['slider_enable_option']['slider_show'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Show Slider on Homepage'),
-    '#default_value' => theme_get_setting('slider_show'),
+    '#default_value' => theme_get_setting('slider_show', 'xara'),
     '#description'   => t("Check this option to show slider on homepage. Uncheck to disable slider."),
   ];
   // Slider -> Slider speed
@@ -182,7 +182,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
   $form['slider']['slider_speed_option']['slider_speed'] = [
     '#type'          => 'number',
     '#title'         => t('Interval time between two slides'),
-    '#default_value' => theme_get_setting('slider_speed'),
+    '#default_value' => theme_get_setting('slider_speed', 'xara'),
     '#description'   => t("Time interval between two slides. Default value is 5000, this means 5 seconds."),
   ];
   /* Slider Image upload */
@@ -203,7 +203,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
   $form['slider']['slider_code'] = [
     '#type'          => 'textarea',
     '#title'         => t('Slider Code'),
-    '#default_value' => theme_get_setting('slider_code'),
+    '#default_value' => theme_get_setting('slider_code', 'xara'),
     '#description'   => t('Please refer to this <a href="https://drupar.com/doc/xara/homepage-slider" target="_blank">documentation page</a> for slider code tutorial.'),
   ];
   /*
@@ -244,7 +244,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
       'flex-end' => t('Right'),
       'center' => t('center'),
     ),
-    '#default_value' => theme_get_setting('header_page_content_position'),
+    '#default_value' => theme_get_setting('header_page_content_position', 'xara'),
     '#description'   => t("Default position is <strong>Center</strong>."),
   ];
   /*
@@ -265,7 +265,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
   $form['sidebar']['front_sidebars']['front_sidebar_section']['front_sidebar'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Show Sidebars On Homepage'),
-    '#default_value' => theme_get_setting('front_sidebar'),
+    '#default_value' => theme_get_setting('front_sidebar', 'xara'),
     '#description'   => t('<p>Check this option to enable left and right sidebar on homepage.</p><hr /><br /><strong>Homepage Content Top</strong> and <strong>Homepage Content Bottom</strong> block regions will always be full width.'),
   ];
   // Sidebar -> sidebar width
@@ -282,7 +282,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
   $form['sidebar']['sidebar_width']['sidebar_width_default_section']['sidebar_width_default'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Use theme default sidebar width'),
-    '#default_value' => theme_get_setting('sidebar_width_default'),
+    '#default_value' => theme_get_setting('sidebar_width_default', 'xara'),
     '#description'   => t('Check this option to use theme default sidebar width. Uncheck this to set custom width below.'),
   ];
   $form['sidebar']['sidebar_width']['sidebar_width_section'] = [
@@ -292,13 +292,13 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
   $form['sidebar']['sidebar_width']['sidebar_width_section']['sidebar_width_left'] = [
     '#type'          => 'number',
     '#title'         => t('Left Sidebar Width (in percentage)'),
-    '#default_value' => theme_get_setting('sidebar_width_left'),
+    '#default_value' => theme_get_setting('sidebar_width_left', 'xara'),
     '#description'   => t('Default width of left sidebar is 30%<br /><br /><p><hr /></p>'),
   ];
   $form['sidebar']['sidebar_width']['sidebar_width_section']['sidebar_width_right'] = [
     '#type'          => 'number',
     '#title'         => t('Right Sidebar Width (in percentage)'),
-    '#default_value' => theme_get_setting('sidebar_width_right'),
+    '#default_value' => theme_get_setting('sidebar_width_right', 'xara'),
     '#description'   => t('Default width of right sidebar is 30%'),
   ];
   // Sidebar -> Animated Sidebar
@@ -330,7 +330,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
   $form['content']['content_direction']['rtl'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Enable RTL (Experimental)'),
-    '#default_value' => theme_get_setting('rtl'),
+    '#default_value' => theme_get_setting('rtl', 'xara'),
     '#description'   => t('Currently not available.'),
     '#disabled'   => TRUE,
   ];
@@ -360,7 +360,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
   $form['content']['submitted_details']['node_author_pic_section']['node_author_pic'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Show Node Author Picture in Submitted Details.'),
-    '#default_value' => theme_get_setting('node_author_pic'),
+    '#default_value' => theme_get_setting('node_author_pic', 'xara'),
     '#description'   => t("Check this option to show node author picture in submitted details. Uncheck to hide."),
   ];
   // Show tags in node submitted.
@@ -371,7 +371,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
   $form['content']['submitted_details']['node_tags_section']['node_tags'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Show Node Tags in Submitted Details.'),
-    '#default_value' => theme_get_setting('node_tags'),
+    '#default_value' => theme_get_setting('node_tags', 'xara'),
     '#description'   => t("Check this option to show node tags (if any) in submitted details. Uncheck to hide."),
   ];
   // Node author picture.
@@ -390,7 +390,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
   $form['footer']['copyright']['copyright_text'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Show website copyright text in footer.'),
-    '#default_value' => theme_get_setting('copyright_text'),
+    '#default_value' => theme_get_setting('copyright_text', 'xara'),
     '#description'   => t("Check this option to show website copyright text in footer. Uncheck to hide.<br />Read more: <a href='https://drupar.com/doc/xara/copyright-text-footer' target='_blank'>Copyright Text in Footer</a>"),
   ];
 
@@ -412,7 +412,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
   $form['comment']['comment_photo']['comment_user_pic'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Show User Picture in comments'),
-    '#default_value' => theme_get_setting('comment_user_pic'),
+    '#default_value' => theme_get_setting('comment_user_pic', 'xara'),
     '#description'   => t("Check this option to show user picture in comment. Uncheck to hide."),
   ];
   // Hightlight Node author comment.
@@ -424,7 +424,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
   $form['comment']['comment_author']['highlight_author_comment'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Highlight Author Comments'),
-    '#default_value' => theme_get_setting('highlight_author_comment'),
+    '#default_value' => theme_get_setting('highlight_author_comment', 'xara'),
     '#description'   => t("Check this option to highlight node author comments."),
   ];
   $form['comment']['comment_author']['highlight_author_color'] = [
@@ -453,7 +453,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
     '#max'  => 3,
     '#step' => 0.1,
     '#title'  => t('Font Size (rem)'),
-    '#default_value' => theme_get_setting('body_font_size'),
+    '#default_value' => theme_get_setting('body_font_size', 'xara'),
     '#description'   => t("Default size is 1rem"),
   ];
 
@@ -477,7 +477,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
   $form['elements']['main_menu']['main_menu_default_section']['main_menu_default'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Use Default Main Menu Settings'),
-    '#default_value' => theme_get_setting('main_menu_default'),
+    '#default_value' => theme_get_setting('main_menu_default', 'xara'),
     '#description'   => t('Check this option to use default main menu settings. Uncheck this to set custom values below.'),
   ];
   $form['elements']['main_menu']['main_menu_top'] = [
@@ -491,7 +491,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
     '#max'  => 3,
     '#step' => 0.1,
     '#title'  => t('Font Size (rem)'),
-    '#default_value' => theme_get_setting('main_menu_top_size'),
+    '#default_value' => theme_get_setting('main_menu_top_size', 'xara'),
     '#description'   => t("Default value is <strong>1rem</strong>.<br />1 rem = 16px<br /><p><hr /></p>"),
   ];
   $form['elements']['main_menu']['main_menu_top']['main_menu_top_weight'] = [
@@ -501,7 +501,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
       '400' => t('400'),
       '700' => t('700'),
     ),
-    '#default_value' => theme_get_setting('main_menu_top_weight'),
+    '#default_value' => theme_get_setting('main_menu_top_weight', 'xara'),
     '#description'   => t("Default value is <strong>700</strong>.<br /><p><hr /></p>"),
   ];
   $form['elements']['main_menu']['main_menu_top']['main_menu_top_transform'] = [
@@ -513,7 +513,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
       'uppercase' => t('Uppercase'),
       'lowercase' => t('Lowercase'),
     ),
-    '#default_value' => theme_get_setting('main_menu_top_transform'),
+    '#default_value' => theme_get_setting('main_menu_top_transform', 'xara'),
     '#description'   => t("Default value is <strong>None</strong>."),
   ];
   $form['elements']['main_menu']['main_menu_sub'] = [
@@ -527,7 +527,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
     '#max'  => 3,
     '#step' => 0.1,
     '#title'  => t('Font Size (rem)'),
-    '#default_value' => theme_get_setting('main_menu_sub_size'),
+    '#default_value' => theme_get_setting('main_menu_sub_size', 'xara'),
     '#description'   => t("Default value is <strong>1rem</strong>.<br />1 rem = 16px<br /><p><hr /></p>"),
   ];
   $form['elements']['main_menu']['main_menu_sub']['main_menu_sub_weight'] = [
@@ -537,7 +537,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
       '400' => t('400'),
       '700' => t('700'),
     ),
-    '#default_value' => theme_get_setting('main_menu_sub_weight'),
+    '#default_value' => theme_get_setting('main_menu_sub_weight', 'xara'),
     '#description'   => t("Default value is <strong>700</strong>.<br /><p><hr /></p>"),
   ];
   $form['elements']['main_menu']['main_menu_sub']['main_menu_sub_transform'] = [
@@ -549,7 +549,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
       'uppercase' => t('Uppercase'),
       'lowercase' => t('Lowercase'),
     ),
-    '#default_value' => theme_get_setting('main_menu_sub_transform'),
+    '#default_value' => theme_get_setting('main_menu_sub_transform', 'xara'),
     '#description'   => t("Default value is <strong>None</strong>."),
   ];
   $form['elements']['main_menu']['main_menu_color'] = [
@@ -572,7 +572,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
   $form['elements']['page_title']['page_title_default_section']['page_title_default'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Use Default Page Title Settings'),
-    '#default_value' => theme_get_setting('page_title_default'),
+    '#default_value' => theme_get_setting('page_title_default', 'xara'),
     '#description'   => t('Check this option to use default values for page title. Uncheck this to set custom values below.'),
   ];
   $form['elements']['page_title']['page_title_size_section'] = [
@@ -585,7 +585,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
     '#max'  => 5,
     '#step' => 0.1,
     '#title'  => t('Desktop and Laptop (rem)'),
-    '#default_value' => theme_get_setting('page_title_size'),
+    '#default_value' => theme_get_setting('page_title_size', 'xara'),
     '#description'   => t("Default value is <strong>2.6rem</strong>"),
   ];
   $form['elements']['page_title']['page_title_transform_section'] = [
@@ -601,7 +601,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
       'uppercase' => t('Uppercase'),
       'lowercase' => t('Lowercase'),
     ),
-    '#default_value' => theme_get_setting('page_title_transform'),
+    '#default_value' => theme_get_setting('page_title_transform', 'xara'),
     '#description'   => t("Default value is <strong>None</strong>."),
   ];
   /*
@@ -626,7 +626,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
     	'local' => t('Local Self Hosted'),
       'googlecdn' => t('Google CDN Server')
     ),
-    '#default_value' => theme_get_setting('font_src'),
+    '#default_value' => theme_get_setting('font_src', 'xara'),
     '#description'   => t('xara theme uses following Google fonts: Noto Sans.<br />You can serve these fonts locally or from Google server.'),
   ];
   // Components -> Social
@@ -642,7 +642,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
   $form['components']['social']['all_icons']['social_icons_show'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Show social icons in footer'),
-    '#default_value' => theme_get_setting('social_icons_show'),
+    '#default_value' => theme_get_setting('social_icons_show', 'xara'),
     '#description'   => t("Check this option to show social icons in footer. Uncheck to hide."),
   ];
   $form['components']['social']['social_profile'] = [
@@ -659,7 +659,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
     '#type'          => 'textfield',
     '#title'         => t('Facebook Url'),
     '#description'   => t("Enter yours facebook profile or page url. Leave the url field blank to hide this icon."),
-    '#default_value' => theme_get_setting('facebook_url'),
+    '#default_value' => theme_get_setting('facebook_url', 'xara'),
   ];
 
   // Twitter.
@@ -672,7 +672,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
     '#type'          => 'textfield',
     '#title'         => t('Twitter Url'),
     '#description'   => t("Enter yours twitter page url. Leave the url field blank to hide this icon."),
-    '#default_value' => theme_get_setting('twitter_url'),
+    '#default_value' => theme_get_setting('twitter_url', 'xara'),
   ];
 
   // Instagram.
@@ -685,7 +685,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
     '#type'          => 'textfield',
     '#title'         => t('Instagram Url'),
     '#description'   => t("Enter yours instagram page url. Leave the url field blank to hide this icon."),
-    '#default_value' => theme_get_setting('instagram_url'),
+    '#default_value' => theme_get_setting('instagram_url', 'xara'),
   ];
 
   // Linkedin.
@@ -698,7 +698,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
     '#type'          => 'textfield',
     '#title'         => t('Linkedin Url'),
     '#description'   => t("Enter yours linkedin page url. Leave the url field blank to hide this icon."),
-    '#default_value' => theme_get_setting('linkedin_url'),
+    '#default_value' => theme_get_setting('linkedin_url', 'xara'),
   ];
 
   // YouTube.
@@ -711,7 +711,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
     '#type'          => 'textfield',
     '#title'         => t('YouTube Url'),
     '#description'   => t("Enter yours youtube.com page url. Leave the url field blank to hide this icon."),
-    '#default_value' => theme_get_setting('youtube_url'),
+    '#default_value' => theme_get_setting('youtube_url', 'xara'),
   ];
 
   // YouTube.
@@ -724,7 +724,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
     '#type'          => 'textfield',
     '#title'         => t('vimeo Url'),
     '#description'   => t("Enter yours vimeo.com page url. Leave the url field blank to hide this icon."),
-    '#default_value' => theme_get_setting('vimeo_url'),
+    '#default_value' => theme_get_setting('vimeo_url', 'xara'),
   ];
 
   // telegram.
@@ -737,7 +737,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
     '#type'          => 'textfield',
     '#title'         => t('Telegram Url'),
     '#description'   => t("Enter yours Telegram profile or page url. Leave the url field blank to hide this icon."),
-    '#default_value' => theme_get_setting('telegram_url'),
+    '#default_value' => theme_get_setting('telegram_url', 'xara'),
   ];
 
   // WhatsApp.
@@ -750,7 +750,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
     '#type'          => 'textfield',
     '#title'         => t('WhatsApp Url'),
     '#description'   => t("Enter yours whatsapp message url. Leave the url field blank to hide this icon."),
-    '#default_value' => theme_get_setting('whatsapp_url'),
+    '#default_value' => theme_get_setting('whatsapp_url', 'xara'),
   ];
 
   // Github.
@@ -763,7 +763,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
     '#type'          => 'textfield',
     '#title'         => t('GitHub Url'),
     '#description'   => t("Enter yours github page url. Leave the url field blank to hide this icon."),
-    '#default_value' => theme_get_setting('github_url'),
+    '#default_value' => theme_get_setting('github_url', 'xara'),
   ];
 
   // Social -> vk.com url.
@@ -775,7 +775,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
       '#type'          => 'textfield',
       '#title'         => t('vk.com'),
       '#description'   => t("Enter yours vk.com page url. Leave the url field blank to hide this icon."),
-      '#default_value' => theme_get_setting('vk_url'),
+      '#default_value' => theme_get_setting('vk_url', 'xara'),
   ];
   $form['components']['node_share'] = [
     '#type'        => 'details',
@@ -796,7 +796,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
   $form['components']['font_icons']['fontawesome4']['fontawesome_four'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Enable FontAwesome 4 Font Icons'),
-    '#default_value' => theme_get_setting('fontawesome_four'),
+    '#default_value' => theme_get_setting('fontawesome_four', 'xara'),
     '#description'   => t('Check this option to enable fontawesome version 4 font icons.'),
   ];
   $form['components']['font_icons']['fontawesome5'] = [
@@ -806,7 +806,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
   $form['components']['font_icons']['fontawesome5']['fontawesome_five'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Enable FontAwesome 5 Font Icons'),
-    '#default_value' => theme_get_setting('fontawesome_five'),
+    '#default_value' => theme_get_setting('fontawesome_five', 'xara'),
     '#description'   => t('Check this option to enable fontawesome version 5 font icons.'),
   ];
   $form['components']['font_icons']['fontawesome6'] = [
@@ -816,7 +816,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
   $form['components']['font_icons']['fontawesome6']['fontawesome_six'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Enable FontAwesome 6 Font Icons'),
-    '#default_value' => theme_get_setting('fontawesome_six'),
+    '#default_value' => theme_get_setting('fontawesome_six', 'xara'),
     '#description'   => t('This feature is available in the premium version of this theme. <a href="https://drupar.com/theme/xarapro" target="_blank">Buy XaraPro for $29 only.</a>'),
     '#disabled'   => TRUE,
   ];
@@ -827,7 +827,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
   $form['components']['font_icons']['bootstrap_icons']['bootstrapicons'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Enable Bootstrap Icons'),
-    '#default_value' => theme_get_setting('bootstrapicons'),
+    '#default_value' => theme_get_setting('bootstrapicons', 'xara'),
     '#description'   => t('Check this option to enable Bootstrap Font Icons. Read more about <a href="https://icons.getbootstrap.com/" target="_blank">Bootstrap Icons</a>'),
   ];
   $form['components']['font_icons']['materialicons'] = [
@@ -869,7 +869,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
   $form['components']['scrolltotop']['scrolltotop_enable']['scrolltotop_on'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Enable scroll to top feature.'),
-    '#default_value' => theme_get_setting('scrolltotop_on'),
+    '#default_value' => theme_get_setting('scrolltotop_on', 'xara'),
     '#description'   => t("Check this option to enable scroll to top feature. Uncheck to disable this fearure and hide scroll to top icon."),
   ];
 
@@ -928,7 +928,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
   $form['insert_codes']['css']['css_section']['styling'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Enable Additional CSS'),
-    '#default_value' => theme_get_setting('styling'),
+    '#default_value' => theme_get_setting('styling', 'xara'),
     '#description'   => t("Check this option to enable custom styling. Uncheck to disable this feature.<br />Please refer to this tutorial page. <a href='https://drupar.com/doc/xara/custom-css' target='_blank'>How To Use Custom Styling</a>"),
   ];
 
@@ -936,7 +936,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
     '#type'          => 'textarea',
     '#rows'          => 20,
     '#title'         => t('Custom CSS Codes'),
-    '#default_value' => theme_get_setting('styling_code'),
+    '#default_value' => theme_get_setting('styling_code', 'xara'),
     '#description'   => t('Please enter your custom css codes in this text box. You can use it to customize the appearance of your site.<br />Please refer to this tutorial for detail: <a href="https://drupar.com/doc/xara/custom-css" target="_blank">Custom CSS</a>'),
   ];
   // Settings under support tab.
