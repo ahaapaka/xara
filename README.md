@@ -1,5 +1,5 @@
 # XARA
-Free Drupal 8, 9 theme by Drupar.com
+Free Drupal 8, 9, 10, 11 theme by Drupar.com
 
 
 ## Drupal.org Project Page

@@ -81,9 +81,9 @@ function xara_preprocess_page(array &$variables) {
 	$variables['linkedin_url'] = santise_val_url(theme_get_setting('linkedin_url', 'xara'));
 	$variables['youtube_url'] = santise_val_url(theme_get_setting('youtube_url', 'xara'));
 	$variables['vimeo_url'] = santise_val_url(theme_get_setting('vimeo_url', 'xara'));
-  $variables['telegram_url'] = santise_val_url(theme_get_setting('telegram_url', 'xara'));
-  $variables['whatsapp_url'] = santise_val_url(theme_get_setting('whatsapp_url', 'xara'));
-  $variables['github_url'] = santise_val_url(theme_get_setting('github_url', 'xara'));
+  	$variables['telegram_url'] = santise_val_url(theme_get_setting('telegram_url', 'xara'));
+  	$variables['whatsapp_url'] = santise_val_url(theme_get_setting('whatsapp_url', 'xara'));
+  	$variables['github_url'] = santise_val_url(theme_get_setting('github_url', 'xara'));
 	$variables['vk_url'] = santise_val_url(theme_get_setting('vk_url', 'xara'));
 
 	// Typography

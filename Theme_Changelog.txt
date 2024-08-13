@@ -19,7 +19,7 @@ Version 10.1.2
 - Updated for base theme TheX v10.x.x
 - Theme now uses font icons from theX theme.
 - Updated twitter icon by new X icon.
-- Other minor imprevements.
+- Other minor improvements.
 
 
 +===============================+
@@ -34,4 +34,12 @@ Version 10.1.4
 05 Sep, 2023
 +===============================+
 - Fixed footer background color with TheX theme version 10.0.4 and higher.
-- Other minor imprevements.
+- Other minor improvements.
+
+
++===============================+
+Version 11.0.0
+13 Aug, 2024
++===============================+
+- Initial release of 11.x.x series.
+- Drupal 11 compatible.

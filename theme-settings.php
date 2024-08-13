@@ -21,7 +21,7 @@ function xara_form_system_theme_settings_alter(&$form, FormStateInterface $form_
   $form['general'] = [
     '#type'  => 'details',
     '#title' => t('General'),
-    '#description' => t('<h3>Thank you for using XARA Theme</h3>XARA is a free Drupal 8, 9, 10 theme designed and developed by <a href="https://drupar.com" target="_blank">Drupar.com</a>'),
+    '#description' => t('<h3>Thank you for using XARA Theme</h3>XARA is a free Drupal 8, 9, 10, 11 theme designed and developed by <a href="https://drupar.com" target="_blank">Drupar.com</a>'),
     '#group' => 'xara',
   ];
   $form['layout'] = [

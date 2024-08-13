@@ -1,10 +1,10 @@
 name: XARA
 type: theme
 base theme: thex
-description: 'Xara is a premium multi-purpose Drupal 8, 9 and 10 Theme by <a href="https://drupar.com/" target="_blank">Drupar.com</a>'
+description: 'Xara is a premium multi-purpose Drupal 8, 9, 10 and 11 Theme by <a href="https://drupar.com/" target="_blank">Drupar.com</a>'
 package: Drupar
-# version: 10.1.4
-core_version_requirement: ^9 || ^10
+# version: 11.0.0
+core_version_requirement: ^9 || ^10 || ^11
 libraries:
   - xara/global-styling
 regions:
